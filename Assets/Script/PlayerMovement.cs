@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rigidBody;
     //Variable for Animator
     public Animator anim;
+    //Coin count
+    public int coincounter;
+
+    public TextMeshProUGUI coinsCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        coinsCounter.text = coincounter.ToString();
         //If we pressed S button
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -74,5 +80,10 @@ public class PlayerMovement : MonoBehaviour
     {
         movementInput = inputValue.Get<Vector2>();
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Coins"))
+            coincounter++;
+        Destroy(collision.gameObject);
+    }
 }
