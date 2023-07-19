@@ -6597,8 +6597,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005444808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: -7.08, z: 0}
-  m_LocalScale: {x: 19.741163, y: 21.974548, z: 1}
+  m_LocalPosition: {x: -0.1, y: -5.19, z: 0}
+  m_LocalScale: {x: 7.590477, y: 9.306221, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8078,7 +8078,7 @@ MonoBehaviour:
   rigidBody: {fileID: 1993105743}
   anim: {fileID: 1993105744}
   coincounter: 0
-  coinsCounter: {fileID: 0}
+  coinsCounter: {fileID: 601210973}
 --- !u!61 &1993105747
 BoxCollider2D:
   m_ObjectHideFlags: 0

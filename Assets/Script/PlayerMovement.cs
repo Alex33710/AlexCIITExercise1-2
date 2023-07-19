@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         coinsCounter.text = coincounter.ToString();
-        //If we pressed S button
+
         if (Input.GetKeyDown(KeyCode.S))
         {
             anim.SetTrigger("ForwardAnimation");
