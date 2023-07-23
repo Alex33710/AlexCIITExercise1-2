@@ -8,13 +8,10 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
 
-    //Variable for our speed modifier
     public float moveSpeed;
-    //Variable for our Input
+
     public Vector2 movementInput;
-    //Variable for our RigidBody2D
     public Rigidbody2D rigidBody;
-    //Variable for Animator
     public Animator anim;
     //Coin count
     public int coincounter;
@@ -30,44 +27,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         coinsCounter.text = coincounter.ToString();
 
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            anim.SetTrigger("ForwardAnimation");
-        }
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            anim.SetTrigger("BackwardAnimation");
-        }
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            anim.SetTrigger("LeftAnimation");
-        }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            anim.SetTrigger("RightAnimation");
-        }
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-
-        }
+        anim.SetFloat("Horizontal", movementInput.x);
+        anim.SetFloat("Vertical", movementInput.y);
+        anim.SetFloat("Speed", movementInput.sqrMagnitude);
     }
     //Update that handles Physics (every 0.01)
     private void FixedUpdate()
